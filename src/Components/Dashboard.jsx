@@ -20,9 +20,7 @@ const Dashboard = () => {
         </h1>
       </div>
 
-      {/* Top Key Metrics Cards (Stats) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Total Portfolio Value */}
         <div className="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700/50 flex items-center gap-5">
           <div className="p-3 bg-green-900/40 rounded-full">
             <Wallet size={28} className="text-green-400" />
@@ -35,7 +33,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* 24h P&L */}
         <div className="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700/50 flex items-center gap-5">
           <div className="p-3 bg-blue-900/40 rounded-full">
             <BarChart3 size={28} className="text-blue-400" />
@@ -44,14 +41,12 @@ const Dashboard = () => {
             <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">
               24h P&L
             </p>
-            {/* Conditional text color based on positive/negative value */}
             <p className="text-3xl font-extrabold mt-0.5 text-green-400">
               +$567.89
             </p>
           </div>
         </div>
 
-        {/* Open Orders */}
         <div className="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700/50 flex items-center gap-5">
           <div className="p-3 bg-yellow-900/40 rounded-full">
             <Clock size={28} className="text-yellow-400" />
@@ -65,11 +60,8 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Main Content Area: Charts/Quick Access & Crypto List */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column: Quick Actions/Charts */}
         <div className="lg:col-span-2 flex flex-col gap-8">
-          {/* Market Overview (Placeholder for Chart) */}
           <div className="bg-gray-800 p-6 rounded-xl shadow-2xl border border-gray-700/50 min-h-[300px]">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <TrendingUp size={24} className="text-red-500" /> Market Snapshot
@@ -79,8 +71,6 @@ const Dashboard = () => {
               [Placeholder for TradingView Chart or Graph Component]
             </div>
           </div>
-
-          {/* Quick Access/Trade Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <a
               href="/spottrading"
@@ -103,20 +93,15 @@ const Dashboard = () => {
             </a>
           </div>
         </div>
-
-        {/* Right Column: Live Crypto Prices List */}
         <div className="lg:col-span-1 bg-gray-800 p-6 rounded-xl shadow-2xl border border-gray-700/50 overflow-hidden">
           <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
             <Zap size={24} className="text-yellow-400" /> Top Markets
           </h2>
-          {/* CryptoList is a component assumed to be a live table of coins */}
           <div className="max-h-[600px] overflow-y-auto">
             <CryptoList />
           </div>
         </div>
       </div>
-
-      {/* Recent Activity / Orders Table */}
       <div className="bg-gray-800 p-6 rounded-xl shadow-2xl border border-gray-700/50">
         <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
           <Clock size={24} className="text-blue-400" /> Recent Orders & Trades
@@ -146,7 +131,6 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-700">
-              {/* Example Orders */}
               <tr className="hover:bg-gray-700 transition duration-150">
                 <td className="p-3 text-sm text-gray-500">10:30:15</td>
                 <td className="p-3 text-sm font-medium text-white">BTC/USDT</td>

@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
-            <ul className="hidden md:flex items-center space-x-6">
+            <ul className="hidden md:flex items-center space-x-10">
               <li>
                 <Link
                   to="/dashboard"
@@ -37,7 +37,7 @@ const Navbar = () => {
                   to="/wallet"
                   className="flex items-center text-gray-300 hover:text-white text-sm"
                 >
-                  Features <span className="ml-1">▼</span>
+                  Features
                 </Link>
               </li>
               <li>
@@ -45,7 +45,7 @@ const Navbar = () => {
                   to="/order"
                   className="flex items-center text-gray-300 hover:text-white text-sm"
                 >
-                  About Us <span className="ml-1">▼</span>
+                  About Us
                 </Link>
               </li>
               <li>
@@ -53,7 +53,7 @@ const Navbar = () => {
                   to="/news"
                   className="flex items-center text-gray-300 hover:text-white text-sm"
                 >
-                  Support <span className="ml-1">▼</span>
+                  Support
                 </Link>
               </li>
             </ul>
