@@ -45,7 +45,6 @@ const SpotTrading = () => {
 
   return (
     <div className="flex w-full min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 text-white p-6 gap-6">
-      {/* Trading Panel */}
       <div className="w-96 flex-shrink-0">
         <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-700/50 p-6">
           {/* Header */}
@@ -140,8 +139,6 @@ const SpotTrading = () => {
               ))}
             </div>
           </div>
-
-          {/* Trading Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             {orderMode === "limit" && (
               <div>

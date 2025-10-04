@@ -69,6 +69,7 @@ const Navbar = () => {
               <span className="mr-2">🌐</span>
               <span>EN</span>
               <span className="ml-1">▼</span>
+          
             </div>
           </div>
         </div>

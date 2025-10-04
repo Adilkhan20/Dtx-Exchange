@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 
-const CryptoList = () => {
+  const CryptoList = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +22,7 @@ const CryptoList = () => {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 10000); // 10 seconds
+    const interval = setInterval(fetchData, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -309,8 +309,6 @@ const CryptoList = () => {
           </table>
         </div>
       </div>
-
-      {/* Footer Stats */}
       <div className="mt-4 flex items-center justify-between text-sm text-gray-400">
         <div>
           Showing {filteredAndSortedCoins.length} of {coins.length} coins

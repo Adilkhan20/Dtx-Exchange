@@ -7,6 +7,7 @@ import {
   FaGooglePlay,
 } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
+import CryptoList from "./CryptoList";
 
 const marketData = [
   {
@@ -90,8 +91,7 @@ const LandingPage = () => {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Trade Crypto with <span className="text-yellow-400">250x</span>{" "}
-              Leverage
+              Trade Crypto with <span className="text-yellow-400">DTX</span>{" "}
             </h1>
             <p className="text-gray-400 mb-8">
               List and derivatives markets for BTC, ETH, and top altcoins. Built
@@ -302,11 +302,7 @@ const LandingPage = () => {
               </a>
             </div>
             <div className="bg-white p-2 inline-block rounded-lg">
-              <img
-                src="./DtX.png"
-                alt="QR Code"
-                className="w-24 h-24"
-              />
+              <img src="./DtX.png" alt="QR Code" className="w-24 h-24" />
             </div>
           </div>
           <div>
@@ -339,10 +335,11 @@ const LandingPage = () => {
               </li>
             </ul>
           </div>
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Additional Content
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div>
+            <CryptoList></CryptoList>
+          </div>
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {Array.from({ length: 9 }).map((_, i) => (
               <div key={i} className="bg-[#121a2f] p-6 rounded-lg">
                 <h3 className="font-semibold mb-2">Feature {i + 1}</h3>
@@ -352,7 +349,7 @@ const LandingPage = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
         </section>
       </main>
     </div>

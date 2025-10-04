@@ -1,50 +1,5 @@
-// import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//   bids: [],
-//   asks: [],
-//   recentTrades: [],
-//   symbol: "BTCUSDT",
-//   loading: false,
-//   lastPrice: 0,
-//   priceChange: 0,
-// };
-
-// const orderbookSlice = createSlice({
-//   name: "orderbook",
-//   initialState,
-//   reducers: {
-//     setOrderbookData: (state, action) => {
-//       const { bids, asks, recentTrades, lastPrice, priceChange } =
-//         action.payload;
-//       state.bids = bids;
-//       state.asks = asks;
-//       state.recentTrades = recentTrades;
-//       state.lastPrice = lastPrice;
-//       state.priceChange = priceChange;
-//     },
-//     setLoading: (state, action) => {
-//       state.loading = action.payload;
-//     },
-//     setSymbol: (state, action) => {
-//       state.symbol = action.payload;
-//     },
-//     updateOrderbook: (state, action) => {
-//       state.bids = action.payload.bids;
-//       state.asks = action.payload.asks;
-//     },
-//   },
-// });
-
-// export const { setOrderbookData, setLoading, setSymbol, updateOrderbook } =
-//   orderbookSlice.actions;
-
-// export const selectOrderbookData = (state) => state.orderbook;
-
-// export default orderbookSlice.reducer;
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-// Async thunks for API calls
 export const fetchOrderbookData = createAsyncThunk(
   "orderbook/fetchOrderbookData",
   async (symbol = "BTCUSDT") => {
@@ -53,8 +8,6 @@ export const fetchOrderbookData = createAsyncThunk(
         `https://api.binance.com/api/v3/depth?symbol=${symbol}&limit=20`
       );
       const data = await response.json();
-
-      // Format bids and asks
       const formattedBids = data.bids
         .slice(0, 10)
         .map(([price, quantity]) => ({
@@ -73,7 +26,6 @@ export const fetchOrderbookData = createAsyncThunk(
         }))
         .sort((a, b) => a.price - b.price);
 
-      // Calculate mid price
       const lastPrice =
         formattedBids.length > 0 && formattedAsks.length > 0
           ? (formattedBids[0].price + formattedAsks[0].price) / 2
@@ -99,8 +51,6 @@ export const fetchRecentTradesData = createAsyncThunk(
         `https://api.binance.com/api/v3/trades?symbol=${symbol}&limit=15`
       );
       const data = await response.json();
-
-      // Format recent trades
       const formattedTrades = data
         .map((trade) => ({
           time: new Date(trade.time).toLocaleTimeString(),

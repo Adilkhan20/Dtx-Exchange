@@ -12,12 +12,15 @@ import {
   Activity,
 } from "lucide-react";
 import OrderBook from "./OrderBook";
+import { useSelector } from "react-redux";
+import { selectOrderbookData } from "../store/slices/orderbookSlice";
 
 const FuturesTrading = () => {
   const [orderType, setOrderType] = useState("long");
   const [leverage, setLeverage] = useState(10);
-  const [orderMode, setOrderMode] = useState("limit"); 
+  const [orderMode, setOrderMode] = useState("limit");
 
+  const { bids } = useSelector(selectOrderbookData);
   const leverageOptions = [1, 2, 5, 10, 25, 50, 100];
 
   return (
@@ -35,9 +38,10 @@ const FuturesTrading = () => {
                 <span className="text-sm font-semibold">+2.34%</span>
               </div>
             </div>
-            <p className="text-3xl font-light text-gray-300">$42,567.89</p>
+
+            <p className="text-3xl font-light text-gray-300"></p>
             <p className="text-sm text-gray-500 mt-1">
-              Index Price: $42,569.12
+              <span className="text-2xl"> Price: {bids?.[0]?.price}</span>
             </p>
           </div>
           <div className="flex bg-gray-700/50 rounded-lg p-1 mb-6">
@@ -57,7 +61,9 @@ const FuturesTrading = () => {
           </div>
           <div className="flex bg-gray-700/30 rounded-xl p-1 mb-6 border border-gray-600/50">
             <button
-              onClick={() => setOrderType("long")}
+              onClick={() => {
+                setOrderType("long");
+              }}
               className={`flex-1 py-4 px-4 rounded-lg font-semibold transition-all duration-200 ${
                 orderType === "long"
                   ? "bg-green-500/20 text-green-400 border border-green-500/30 shadow-lg shadow-green-500/10"
